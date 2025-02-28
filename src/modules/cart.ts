@@ -26,5 +26,5 @@ const cartSchema = new Schema<Icart>({
     totalamount: { type: Number, required: true, default: 0 },
     status: { type: String, enum: ['active', 'completed'], default: 'active' }
 });
-
+let a= 'aaa'
 export const Cart = mongoose.model<Icart>("Cart", cartSchema);
