@@ -19,7 +19,7 @@ const cartItemSchema = new Schema<Icartitems>({
     uniteprice: { type: Number, required: true },
     quan: { type: Number, required: true, default: 1 }
 });
-
+let qqqqq='aaaa'
 const cartSchema = new Schema<Icart>({
     userid: { type: Schema.Types.ObjectId, required: true, ref: 'users' },
     items: [cartItemSchema],
