@@ -27,5 +27,5 @@ export const loginfunction =async({email,password}:registersparams)=>{
     return{data,statescode:200}
 }
 const generatejwt=(data:any)=>{
-    return(jwt.sign(data,'123'))//if i didnot give the token so the token will not expire 
+    return(jwt.sign(data,'123'))//if i didnot give the token Time  so the token will not expire 
 }
