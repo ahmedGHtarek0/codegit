@@ -4,6 +4,7 @@ import usersRouts from './Routs/usersRouts'
 import { addpro } from './servisces/pro'
 import proro from './Routs/proro'
 import cartroute from './Routs/cartroute'
+import { email } from './servisces/usersServic'
 const app = express()
 const port = 3001
 app.use(express.json())
@@ -12,6 +13,7 @@ app.use('/users',usersRouts)
 addpro()//seed the peoducts to the database
 app.use('/products',proro)
 app.use('/cart',cartroute)
+email()
 app.listen(port,()=>{
     console.log('server is running')
 }

@@ -1,5 +1,9 @@
 import Usermodels from "../modules/usersmodels"
 import jwt from 'jsonwebtoken'
+import nodemailer from 'nodemailer'
+import twilio from "twilio";
+import { Vonage } from "@vonage/server-sdk";
+import messagebird from "messagebird";
 interface registersparams{
     email:string,
     password:string
@@ -29,3 +33,36 @@ export const loginfunction =async({email,password}:registersparams)=>{
 const generatejwt=(data:any)=>{
     return(jwt.sign(data,'123'))//if i didnot give the token Time  so the token will not expire 
 }
+
+
+
+
+
+
+export const email = async () => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user:'sbdhdjdjdj0@gmail.com',
+      pass: "srmt jlfc vsgi bagg ",
+    },
+  });
+
+  try {
+    const info = await transporter.sendMail({
+      from: `"Maddison Foo Koch 👻" <sbdhdjdjdj0@gmail.com>`,
+      to: "ajanmakjanm12@gmail.com, sbdhdjdjdj0@gmail.com,A.Ahmed08579@student.aast.edu",
+      subject: "Hello ✔",
+      text: "Hello world?",
+      html: "<b>Hello world?</b>",
+    });
+
+    console.log("Message sent: %s", info.messageId);
+  } catch (error) {
+    console.error("Error sending email:", error);
+  }
+};
+
+
+
+
